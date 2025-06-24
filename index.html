@@ -1,0 +1,1725 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mariam Elbishbeashy - Portfolio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+  <link href="styles.css" rel="stylesheet">
+
+  <script>
+    AOS.init({
+      duration: 1000,
+      once: false, 
+    });
+ 
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            gray: {
+              900: '#111827',
+              800: '#1F2937',
+              700: '#374151',
+              600: '#4B5563',
+              500: '#6B7280',
+              400: '#9CA3AF',
+              300: '#D1D5DB',
+              200: '#E5E7EB',
+              100: '#F3F4F6',
+            },
+            purple: {
+              900: '#581C87',
+              800: '#6B21A8',
+              700: '#7E22CE',
+              600: '#9333EA',
+              500: '#A855F7',
+              400: '#C084FC',
+              300: '#D8B4FE',
+              200: '#E9D5FF',
+              100: '#F3E8FF',
+            },
+            violet: {
+              900: '#4C1D95',
+              800: '#5B21B6',
+              700: '#6D28D9',
+              600: '#7C3AED',
+              500: '#8B5CF6',
+              400: '#A78BFA',
+              300: '#C4B5FD',
+              200: '#DDD6FE',
+              100: '#EDE9FE',
+            },
+            indigo: {
+              900: '#312E81',
+              800: '#3730A3',
+              700: '#4338CA',
+              600: '#4F46E5',
+              500: '#6366F1',
+              400: '#818CF8',
+              300: '#A5B4FC',
+              200: '#C7D2FE',
+              100: '#E0E7FF',
+            },
+          },
+        }
+      }
+    }
+  </script>
+</head>
+<body class="min-h-screen bg-gray-900 dark:bg-gray-900 transition-colors duration-300">
+  <div id="app">
+    <!-- Header -->
+    <header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-transparent" id="header">
+      <nav class="container mx-auto px-6 py-4">
+        <div class="flex items-center justify-between">
+          <div class="font-bold text-xl text-purple-400 transform hover:scale-110 transition-all duration-300">
+            Portfolio
+          </div>
+
+          <!-- Desktop Navigation -->
+          <div class="hidden md:flex items-center space-x-8">
+            <button class="text-gray-300 hover:text-purple-400 transition-all duration-300 font-medium transform hover:scale-110" data-section="home">Home</button>
+            <button class="text-gray-300 hover:text-purple-400 transition-all duration-300 font-medium transform hover:scale-110" data-section="about">About</button>
+            <button class="text-gray-300 hover:text-purple-400 transition-all duration-300 font-medium transform hover:scale-110" data-section="skills">Skills</button>
+            <button class="text-gray-300 hover:text-purple-400 transition-all duration-300 font-medium transform hover:scale-110" data-section="projects">Projects</button>
+            <!-- <button class="text-gray-300 hover:text-purple-400 transition-all duration-300 font-medium transform hover:scale-110" data-section="experience">Experience</button> -->
+            <button class="text-gray-300 hover:text-purple-400 transition-all duration-300 font-medium transform hover:scale-110" data-section="certifications">Certificates</button>
+            <button class="text-gray-300 hover:text-purple-400 transition-all duration-300 font-medium transform hover:scale-110" data-section="hobbies">Hobbies</button>
+            <button class="text-gray-300 hover:text-purple-400 transition-all duration-300 font-medium transform hover:scale-110" data-section="contact">Contact</button>
+            <button id="theme-toggle" class="p-2 rounded-lg bg-gray-800/50 backdrop-blur-sm hover:bg-gray-700/50 transition-all duration-300 transform hover:scale-110 hover:shadow-lg hover:shadow-purple-500/30">
+              <i data-lucide="sun" class="text-purple-400"></i>
+            </button>
+          </div>
+
+          <!-- Mobile Menu Button -->
+          <div class="md:hidden flex items-center space-x-4">
+            <button id="theme-toggle-mobile" class="p-2 rounded-lg bg-gray-800/50 backdrop-blur-sm hover:bg-gray-700/50 transition-all duration-300 transform hover:scale-110">
+              <i data-lucide="sun" class="text-purple-400"></i>
+            </button>
+            <button id="mobile-menu-button" class="p-2 rounded-lg bg-gray-800/50 backdrop-blur-sm hover:bg-gray-700/50 transition-all duration-300 transform hover:scale-110">
+              <i data-lucide="menu" class="text-purple-400"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Mobile Navigation -->
+        <div id="mobile-menu" class="hidden md:hidden mt-4 py-4 bg-gray-900/90 backdrop-blur-md rounded-lg shadow-2xl shadow-purple-500/20">
+          <button class="block w-full text-left px-4 py-3 text-gray-300 hover:text-purple-400 hover:bg-gray-800/50 transition-all duration-300 transform hover:scale-105" data-section="home">Home</button>
+          <button class="block w-full text-left px-4 py-3 text-gray-300 hover:text-purple-400 hover:bg-gray-800/50 transition-all duration-300 transform hover:scale-105" data-section="about">About</button>
+          <button class="block w-full text-left px-4 py-3 text-gray-300 hover:text-purple-400 hover:bg-gray-800/50 transition-all duration-300 transform hover:scale-105" data-section="skills">Skills</button>
+          <button class="block w-full text-left px-4 py-3 text-gray-300 hover:text-purple-400 hover:bg-gray-800/50 transition-all duration-300 transform hover:scale-105" data-section="projects">Projects</button>
+          <button class="block w-full text-left px-4 py-3 text-gray-300 hover:text-purple-400 hover:bg-gray-800/50 transition-all duration-300 transform hover:scale-105" data-section="experience">Experience</button>
+          <button class="block w-full text-left px-4 py-3 text-gray-300 hover:text-purple-400 hover:bg-gray-800/50 transition-all duration-300 transform hover:scale-105" data-section="contact">Contact</button>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <!-- Hero Section -->
+      <section id="home" class="min-h-screen flex items-center justify-center relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-br from-gray-900 via-purple-900"></div>
+        
+        <!-- Floating background elements -->
+        <div class="absolute inset-0 overflow-hidden">
+          <div class="absolute top-1/4 left-1/4 w-64 h-64 bg-purple-500/10 rounded-full blur-3xl animate-pulse"></div>
+          <div class="absolute top-3/4 right-1/4 w-96 h-96 bg-indigo-500/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
+          <div class="absolute bottom-1/4 left-1/3 w-80 h-80 bg-violet-500/10 rounded-full blur-3xl animate-pulse delay-500"></div>
+        </div>
+        
+        <div class="container mx-auto px-6 text-center relative z-10">
+          <div class="max-w-4xl mx-auto">
+            <div class="mb-8 mt-10">
+              <div class="w-32 h-32 mx-auto mb-8 rounded-full bg-gradient-to-r from-purple-600 to-violet-600 flex items-center justify-center text-white text-4xl font-bold shadow-2xl transform hover:scale-110 transition-all duration-500 hover:shadow-purple-500/50">
+                ME
+              </div>
+            </div>
+            
+            <h1 class="text-3xl md:text-6xl font-bold text-white mb-6 transform hover:scale-105 transition-all duration-300">
+              <span class="bg-gradient-to-r from-purple-400 to-violet-400 bg-clip-text text-transparent">
+                Mariam Elbishbeashy
+              </span>
+            </h1>
+            
+            <h2 class="text-2xl md:text-3xl text-gray-300 mb-8 font-light transform hover:scale-105 transition-all duration-300">
+              Full Stack Developer & UI/UX Designer
+            </h2>
+            
+            <p class="text-lg md:text-xl text-gray-400 mb-12 max-w-2xl mx-auto leading-relaxed transform hover:scale-105 transition-all duration-300">
+              I craft beautiful, functional web experiences with modern technologies. 
+              Passionate about clean code, user-centered design, and solving complex problems.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row gap-4 justify-center mb-16">
+              <button class="px-8 py-4 bg-gradient-to-r from-purple-600 to-violet-600 hover:from-purple-700 hover:to-violet-700 text-white rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/50">
+                View My Work
+              </button>
+              <button class="px-8 py-4 border-2 border-purple-400 text-purple-400 hover:bg-purple-600 hover:text-white rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/30">
+                Download Resume
+              </button>
+            </div>
+            
+            <div class="flex justify-center space-x-6 mb-16">
+              <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="p-4 bg-gray-800/80 backdrop-blur-sm rounded-full shadow-2xl hover:shadow-purple-500/30 transition-all duration-300 transform hover:scale-110 hover:-translate-y-2">
+                <i data-lucide="github" class="text-gray-300"></i>
+              </a>
+              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="p-4 bg-gray-800/80 backdrop-blur-sm rounded-full shadow-2xl hover:shadow-purple-500/30 transition-all duration-300 transform hover:scale-110 hover:-translate-y-2">
+                <i data-lucide="linkedin" class="text-purple-400"></i>
+              </a>
+              <a href="mailto:Mariam.elbishbeashy@gmail.com" class="p-4 bg-gray-800/80 backdrop-blur-sm rounded-full shadow-2xl hover:shadow-purple-500/30 transition-all duration-300 transform hover:scale-110 hover:-translate-y-2">
+                <i data-lucide="mail" class="text-violet-400"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        
+        <button id="scroll-to-about" class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce hover:scale-110 transition-all duration-300">
+          <i data-lucide="chevron-down" class="text-purple-400"></i>
+        </button>
+      </section>
+
+      <!-- About Section -->
+      <section id="about" class="py-20 bg-gray-900 relative overflow-hidden">
+        <!-- Floating background elements -->
+        <div class="absolute inset-0 overflow-hidden">
+          <div class="absolute top-1/3 right-1/4 w-72 h-72 bg-purple-500/5 rounded-full blur-3xl animate-pulse"></div>
+          <div class="absolute bottom-1/3 left-1/4 w-96 h-96 bg-violet-500/5 rounded-full blur-3xl animate-pulse delay-700"></div>
+        </div>
+
+        <div class="container mx-auto px-6 relative z-10">
+          <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16">
+              <h2 class="text-4xl md:text-5xl font-bold text-white mb-6 transform hover:scale-105 transition-all duration-300">
+                About Me
+              </h2>
+              <p class="text-xl text-gray-400 max-w-3xl mx-auto">
+                I'm a passionate developer with 5+ years of experience creating digital experiences 
+                that are both beautiful and functional.
+              </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+              <div class="transform hover:scale-105 transition-all duration-500">
+                <h3 class="text-2xl font-bold text-white mb-6">
+                  My Story
+                </h3>
+                <p class="text-gray-300 mb-6 leading-relaxed">
+                  Started my journey as a self-taught developer, I've evolved into a full-stack engineer 
+                  with a passion for creating seamless user experiences. I believe in writing clean, 
+                  maintainable code and staying current with the latest technologies.
+                </p>
+                <p class="text-gray-300 mb-6 leading-relaxed">
+                  When I'm not coding, you'll find me exploring new design trends, contributing to 
+                  open-source projects, or mentoring junior developers. I'm always excited to take 
+                  on new challenges and collaborate with creative teams.
+                </p>
+                <div class="flex flex-wrap gap-4">
+                  <span class="px-4 py-2 bg-purple-900/50 backdrop-blur-sm text-purple-200 rounded-full text-sm font-medium transform hover:scale-105 transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/30">
+                    Problem Solver
+                  </span>
+                  <span class="px-4 py-2 bg-violet-900/50 backdrop-blur-sm text-violet-200 rounded-full text-sm font-medium transform hover:scale-105 transition-all duration-300 hover:shadow-lg hover:shadow-violet-500/30">
+                    Team Player
+                  </span>
+                  <span class="px-4 py-2 bg-indigo-900/50 backdrop-blur-sm text-indigo-200 rounded-full text-sm font-medium transform hover:scale-105 transition-all duration-300 hover:shadow-lg hover:shadow-indigo-500/30">
+                    Fast Learner
+                  </span>
+                </div>
+              </div>
+
+              <div class="grid gap-6">
+                <div class="p-6 bg-gray-800/50 backdrop-blur-sm rounded-xl shadow-2xl transform hover:scale-105 hover:-translate-y-2 transition-all duration-500 hover:shadow-purple-500/20">
+                  <div class="flex items-center mb-4">
+                    <div class="p-3 bg-gradient-to-r from-purple-600 to-violet-600 rounded-lg shadow-lg">
+                      <i data-lucide="code" class="text-white"></i>
+                    </div>
+                    <h4 class="text-xl font-semibold text-white ml-4">
+                      Development
+                    </h4>
+                  </div>
+                  <p class="text-gray-300">
+                    Full-stack development with modern frameworks and best practices. 
+                    Always focused on performance and scalability.
+                  </p>
+                </div>
+
+                <div class="p-6 bg-gray-800/50 backdrop-blur-sm rounded-xl shadow-2xl transform hover:scale-105 hover:-translate-y-2 transition-all duration-500 hover:shadow-violet-500/20">
+                  <div class="flex items-center mb-4">
+                    <div class="p-3 bg-gradient-to-r from-violet-600 to-purple-600 rounded-lg shadow-lg">
+                      <i data-lucide="palette" class="text-white"></i>
+                    </div>
+                    <h4 class="text-xl font-semibold text-white ml-4">
+                      Design
+                    </h4>
+                  </div>
+                  <p class="text-gray-300">
+                    UI/UX design with attention to detail, accessibility, and user-centered thinking. 
+                    Creating interfaces that users love.
+                  </p>
+                </div>
+
+                <div class="p-6 bg-gray-800/50 backdrop-blur-sm rounded-xl shadow-2xl transform hover:scale-105 hover:-translate-y-2 transition-all duration-500 hover:shadow-indigo-500/20">
+                  <div class="flex items-center mb-4">
+                    <div class="p-3 bg-gradient-to-r from-indigo-600 to-purple-600 rounded-lg shadow-lg">
+                      <i data-lucide="zap" class="text-white"></i>
+                    </div>
+                    <h4 class="text-xl font-semibold text-white ml-4">
+                      Innovation
+                    </h4>
+                  </div>
+                  <p class="text-gray-300">
+                    Always exploring new technologies and methodologies to deliver 
+                    cutting-edge solutions that make a difference.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Skills Section -->
+      <section id="skills" class="py-20 bg-gray-900 relative overflow-hidden">
+  <!-- Floating background elements -->
+  <div class="absolute inset-0 overflow-hidden">
+    <div class="absolute top-1/4 left-1/3 w-80 h-80 bg-purple-500/5 rounded-full blur-3xl animate-pulse delay-300"></div>
+    <div class="absolute bottom-1/4 right-1/3 w-64 h-64 bg-violet-500/5 rounded-full blur-3xl animate-pulse delay-1000"></div>
+  </div>
+
+  <div class="container mx-auto px-6 relative z-10">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">
+          Tech Stack
+        </h2>
+        <p class="text-xl text-gray-400 max-w-3xl mx-auto">
+          Comprehensive technologies I work with across different development domains
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <!-- Programming Languages -->
+        <div class="bg-gray-800/50 backdrop-blur-sm rounded-xl p-6 shadow-2xl transform hover:scale-105 hover:-translate-y-2 transition-all duration-500 hover:shadow-purple-500/20">
+          <div class="flex items-center mb-4">
+            <div class="p-3 bg-gradient-to-r from-purple-600 to-violet-600 rounded-lg shadow-lg">
+              <i data-lucide="code" class="text-white"></i>
+            </div>
+            <h3 class="text-xl font-semibold text-white ml-4">Languages</h3>
+          </div>
+          <ul class="space-y-2 text-gray-300">
+            <li class="flex items-center">
+              <div class="w-2 h-2 bg-purple-500 rounded-full mr-2"></div>
+              C++
+            </li>
+            <li class="flex items-center">
+              <div class="w-2 h-2 bg-purple-500 rounded-full mr-2"></div>
+              PHP
+            </li>
+            <li class="flex items-center">
+              <div class="w-2 h-2 bg-purple-500 rounded-full mr-2"></div>
+              Java
+            </li>
+            <li class="flex items-center">
+              <div class="w-2 h-2 bg-purple-500 rounded-full mr-2"></div>
+              Python
+            </li>
+          </ul>
+        </div>
+
+        <!-- Backend Technologies -->
+        <div class="bg-gray-800/50 backdrop-blur-sm rounded-xl p-6 shadow-2xl transform hover:scale-105 hover:-translate-y-2 transition-all duration-500 hover:shadow-blue-500/20">
+          <div class="flex items-center mb-4">
+            <div class="p-3 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-lg shadow-lg">
+              <i data-lucide="server" class="text-white"></i>
+            </div>
+            <h3 class="text-xl font-semibold text-white ml-4">Backend</h3>
+          </div>
+          <ul class="space-y-2 text-gray-300">
+            <li class="flex items-center">
+              <div class="w-2 h-2 bg-blue-500 rounded-full mr-2"></div>
+              Node.js
+            </li>
+            <li class="flex items-center">
+              <div class="w-2 h-2 bg-blue-500 rounded-full mr-2"></div>
+              Express.js
+            </li>
+            <li class="flex items-center">
+              <div class="w-2 h-2 bg-blue-500 rounded-full mr-2"></div>
+              Apache
+            </li>
+            <li class="flex items-center">
+              <div class="w-2 h-2 bg-blue-500 rounded-full mr-2"></div>
+              EJS
+            </li>
+          </ul>
+        </div>
+
+        <!-- Databases -->
+        <div class="bg-gray-800/50 backdrop-blur-sm rounded-xl p-6 shadow-2xl transform hover:scale-105 hover:-translate-y-2 transition-all duration-500 hover:shadow-green-500/20">
+          <div class="flex items-center mb-4">
+            <div class="p-3 bg-gradient-to-r from-green-600 to-emerald-600 rounded-lg shadow-lg">
+              <i data-lucide="database" class="text-white"></i>
+            </div>
+            <h3 class="text-xl font-semibold text-white ml-4">Databases</h3>
+          </div>
+          <ul class="space-y-2 text-gray-300">
+            <li class="flex items-center">
+              <div class="w-2 h-2 bg-green-500 rounded-full mr-2"></div>
+              MySQL
+            </li>
+            <li class="flex items-center">
+              <div class="w-2 h-2 bg-green-500 rounded-full mr-2"></div>
+              MongoDB
+            </li>
+            <li class="flex items-center">
+              <div class="w-2 h-2 bg-green-500 rounded-full mr-2"></div>
+              QI
+            </li>
+          </ul>
+        </div>
+
+        <!-- Data Science & AI -->
+        <div class="bg-gray-800/50 backdrop-blur-sm rounded-xl p-6 shadow-2xl transform hover:scale-105 hover:-translate-y-2 transition-all duration-500 hover:shadow-orange-500/20">
+          <div class="flex items-center mb-4">
+            <div class="p-3 bg-gradient-to-r from-orange-600 to-amber-600 rounded-lg shadow-lg">
+              <i data-lucide="brain-circuit" class="text-white"></i>
+            </div>
+            <h3 class="text-xl font-semibold text-white ml-4">Data & AI</h3>
+          </div>
+          <ul class="space-y-2 text-gray-300">
+            <li class="flex items-center">
+              <div class="w-2 h-2 bg-orange-500 rounded-full mr-2"></div>
+              NumPy
+            </li>
+            <li class="flex items-center">
+              <div class="w-2 h-2 bg-orange-500 rounded-full mr-2"></div>
+              Pandas
+            </li>
+            <li class="flex items-center">
+              <div class="w-2 h-2 bg-orange-500 rounded-full mr-2"></div>
+              Scikit-learn
+            </li>
+            <li class="flex items-center">
+              <div class="w-2 h-2 bg-orange-500 rounded-full mr-2"></div>
+              TensorFlow/Keras
+            </li>
+          </ul>
+        </div>
+
+        <!-- Tools & Platforms -->
+        <div class="bg-gray-800/50 backdrop-blur-sm rounded-xl p-6 shadow-2xl transform hover:scale-105 hover:-translate-y-2 transition-all duration-500 hover:shadow-red-500/20">
+          <div class="flex items-center mb-4">
+            <div class="p-3 bg-gradient-to-r from-red-600 to-pink-600 rounded-lg shadow-lg">
+              <i data-lucide="wrench" class="text-white"></i>
+            </div>
+            <h3 class="text-xl font-semibold text-white ml-4">Tools</h3>
+          </div>
+          <ul class="space-y-2 text-gray-300">
+            <li class="flex items-center">
+              <div class="w-2 h-2 bg-red-500 rounded-full mr-2"></div>
+              Git/GitHub
+            </li>
+            <li class="flex items-center">
+              <div class="w-2 h-2 bg-red-500 rounded-full mr-2"></div>
+              Cisco
+            </li>
+            <li class="flex items-center">
+              <div class="w-2 h-2 bg-red-500 rounded-full mr-2"></div>
+              Canva
+            </li>
+            <li class="flex items-center">
+              <div class="w-2 h-2 bg-red-500 rounded-full mr-2"></div>
+              OpenCV
+            </li>
+          </ul>
+        </div>
+
+        <!-- Frontend & UI -->
+        <div class="bg-gray-800/50 backdrop-blur-sm rounded-xl p-6 shadow-2xl transform hover:scale-105 hover:-translate-y-2 transition-all duration-500 hover:shadow-cyan-500/20">
+          <div class="flex items-center mb-4">
+            <div class="p-3 bg-gradient-to-r from-cyan-600 to-sky-600 rounded-lg shadow-lg">
+              <i data-lucide="layout" class="text-white"></i>
+            </div>
+            <h3 class="text-xl font-semibold text-white ml-4">Frontend</h3>
+          </div>
+          <ul class="space-y-2 text-gray-300">
+            <li class="flex items-center">
+              <div class="w-2 h-2 bg-cyan-500 rounded-full mr-2"></div>
+              JavaFX
+            </li>
+            <li class="flex items-center">
+              <div class="w-2 h-2 bg-cyan-500 rounded-full mr-2"></div>
+              EJS
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="mt-16 text-center">
+        <h3 class="text-2xl font-bold text-white mb-8">
+          Currently Exploring
+        </h3>
+        <div class="flex flex-wrap justify-center gap-4">
+          <span class="px-6 py-3 bg-gradient-to-r from-purple-600 to-violet-600 text-white rounded-full font-medium shadow-lg transform hover:scale-105 hover:-translate-y-1 transition-all duration-300">
+            Cloud Architecture
+          </span>
+          <span class="px-6 py-3 bg-gradient-to-r from-purple-600 to-violet-600 text-white rounded-full font-medium shadow-lg transform hover:scale-105 hover:-translate-y-1 transition-all duration-300">
+            Microservices
+          </span>
+          <span class="px-6 py-3 bg-gradient-to-r from-purple-600 to-violet-600 text-white rounded-full font-medium shadow-lg transform hover:scale-105 hover:-translate-y-1 transition-all duration-300">
+            Kubernetes
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+      <!-- Projects Section -->
+      <section id="projects" class="py-20 bg-gray-900 relative overflow-hidden">
+        <!-- Floating background elements -->
+        <div class="absolute inset-0 overflow-hidden">
+          <div class="absolute top-1/4 right-1/4 w-96 h-96 bg-purple-500/5 rounded-full blur-3xl animate-pulse"></div>
+          <div class="absolute bottom-1/4 left-1/4 w-80 h-80 bg-violet-500/5 rounded-full blur-3xl animate-pulse delay-500"></div>
+          <div class="absolute top-3/4 right-1/3 w-64 h-64 bg-indigo-500/5 rounded-full blur-3xl animate-pulse delay-1000"></div>
+        </div>
+
+        <div class="container mx-auto px-6 relative z-10">
+          <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+              <h2 class="text-4xl md:text-5xl font-bold text-white mb-6 transform hover:scale-105 transition-all duration-300">
+                Featured Projects
+              </h2>
+              <p class="text-xl text-gray-400 max-w-3xl mx-auto">
+                Here are some of my recent projects that showcase my skills and passion for development.
+              </p>
+            </div>
+
+            <!-- Featured Projects Grid - 3 per row -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+              <!-- Project 1 -->
+              <div class="group bg-gray-800/50 backdrop-blur-sm rounded-xl shadow-2xl hover:shadow-purple-500/20 transition-all duration-500 overflow-hidden transform hover:scale-105 hover:-translate-y-2">
+                <div class="relative overflow-hidden">
+                  <img src="https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg?auto=compress&cs=tinysrgb&w=600" alt="E-Commerce Platform" class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500">
+                  <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <div class="absolute top-4 left-4">
+                    <div class="flex items-center px-3 py-1 bg-gradient-to-r from-purple-600 to-violet-600 text-white rounded-full text-sm font-medium shadow-lg">
+                      <i data-lucide="zap" class="mr-1"></i>
+                      Featured
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="p-6">
+                  <h3 class="text-xl font-bold text-white mb-3 transform hover:scale-105 transition-all duration-300">
+                    Schedule System
+                  </h3>
+                  <p class="text-gray-300 mb-4 text-sm leading-relaxed">
+                    college schedule system using CLR Framework.
+                  </p>
+                  
+                  <div class="flex flex-wrap gap-2 mb-4">
+                    <span class="px-2 py-1 bg-purple-900/50 backdrop-blur-sm text-purple-200 rounded-full text-xs font-medium transform hover:scale-105 transition-all duration-300">
+                      React
+                    </span>
+                    <span class="px-2 py-1 bg-purple-900/50 backdrop-blur-sm text-purple-200 rounded-full text-xs font-medium transform hover:scale-105 transition-all duration-300">
+                      Node.js
+                    </span>
+                    <span class="px-2 py-1 bg-purple-900/50 backdrop-blur-sm text-purple-200 rounded-full text-xs font-medium transform hover:scale-105 transition-all duration-300">
+                      PostgreSQL
+                    </span>
+                    <span class="px-2 py-1 bg-gray-700/50 backdrop-blur-sm text-gray-400 rounded-full text-xs font-medium">
+                      +2 more
+                    </span>
+                  </div>
+                  
+                  <div class="flex space-x-3">
+                    <a href="https://github.com/Mariam-Elbishbeashy/semester-02-project" target="_blank" rel="noopener noreferrer" class="flex items-center px-3 py-2 bg-gray-700/50 backdrop-blur-sm text-white rounded-lg hover:bg-gray-600/50 transition-all duration-300 text-sm flex-1 justify-center transform hover:scale-105 hover:shadow-lg">
+                      <i data-lucide="github" class="mr-2"></i>
+                      Code
+                    </a>
+                    <a href="https://example.com" target="_blank" rel="noopener noreferrer" class="flex items-center px-3 py-2 bg-gradient-to-r from-purple-600 to-violet-600 text-white rounded-lg hover:from-purple-700 hover:to-violet-700 transition-all duration-300 text-sm flex-1 justify-center transform hover:scale-105 hover:shadow-lg hover:shadow-purple-500/50">
+                      <i data-lucide="external-link" class="mr-2"></i>
+                      Demo
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Project 2 -->
+              <div class="group bg-gray-800/50 backdrop-blur-sm rounded-xl shadow-2xl hover:shadow-purple-500/20 transition-all duration-500 overflow-hidden transform hover:scale-105 hover:-translate-y-2">
+                <div class="relative overflow-hidden">
+                  <img src="https://images.pexels.com/photos/7688336/pexels-photo-7688336.jpeg?auto=compress&cs=tinysrgb&w=600" alt="scheduling system" class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500">
+                  <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <div class="absolute top-4 left-4">
+                    <div class="flex items-center px-3 py-1 bg-gradient-to-r from-purple-600 to-violet-600 text-white rounded-full text-sm font-medium shadow-lg">
+                      <i data-lucide="zap" class="mr-1"></i>
+                      Featured
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="p-6">
+                  <h3 class="text-xl font-bold text-white mb-3 transform hover:scale-105 transition-all duration-300">
+                    Contact List System
+                  </h3>
+                  <p class="text-gray-300 mb-4 text-sm leading-relaxed">
+                    A contact list application built with Qt, utilizing file handling and a doubly linked list for data storage. Includes search functionality using regular expressions for efficient contact lookup.
+                  </p>
+                  
+                  <div class="flex flex-wrap gap-2 mb-4">
+                    <span class="px-2 py-1 bg-purple-900/50 backdrop-blur-sm text-purple-200 rounded-full text-xs font-medium transform hover:scale-105 transition-all duration-300">
+                      c++
+                    </span>
+                    <span class="px-2 py-1 bg-purple-900/50 backdrop-blur-sm text-purple-200 rounded-full text-xs font-medium transform hover:scale-105 transition-all duration-300">
+                      QT
+                    </span>
+                    <span class="px-2 py-1 bg-purple-900/50 backdrop-blur-sm text-purple-200 rounded-full text-xs font-medium transform hover:scale-105 transition-all duration-300">
+                      data-structure
+                    </span>
+                  </div>
+                  
+                  <div class="flex space-x-3">
+                    <a href="https://github.com/Mariam-Elbishbeashy/Contact-list-project" target="_blank" rel="noopener noreferrer" class="flex items-center px-3 py-2 bg-gray-700/50 backdrop-blur-sm text-white rounded-lg hover:bg-gray-600/50 transition-all duration-300 text-sm flex-1 justify-center transform hover:scale-105 hover:shadow-lg">
+                      <i data-lucide="github" class="mr-2"></i>
+                      Code
+                    </a>
+                    <a href="https://example.com" target="_blank" rel="noopener noreferrer" class="flex items-center px-3 py-2 bg-gradient-to-r from-purple-600 to-violet-600 text-white rounded-lg hover:from-purple-700 hover:to-violet-700 transition-all duration-300 text-sm flex-1 justify-center transform hover:scale-105 hover:shadow-lg hover:shadow-purple-500/50">
+                      <i data-lucide="external-link" class="mr-2"></i>
+                      Demo
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Project 3 -->
+              <div class="group bg-gray-800/50 backdrop-blur-sm rounded-xl shadow-2xl hover:shadow-purple-500/20 transition-all duration-500 overflow-hidden transform hover:scale-105 hover:-translate-y-2">
+                <div class="relative overflow-hidden">
+                  <img src="https://images.pexels.com/photos/1118873/pexels-photo-1118873.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Weather Dashboard" class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500">
+                  <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <div class="absolute top-4 left-4">
+                    <div class="flex items-center px-3 py-1 bg-gradient-to-r from-purple-600 to-violet-600 text-white rounded-full text-sm font-medium shadow-lg">
+                      <i data-lucide="zap" class="mr-1"></i>
+                      Featured
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="p-6">
+                  <h3 class="text-xl font-bold text-white mb-3 transform hover:scale-105 transition-all duration-300">
+                    Restaurant management System
+                  </h3>
+                  <p class="text-gray-300 mb-4 text-sm leading-relaxed">
+                    A Java-based restaurant management system using client-server architecture with multithreading. Features a JavaFX GUI, OOP design, and file handling for data persistence.
+                  </p>
+                  
+                  <div class="flex flex-wrap gap-2 mb-4">
+                    <span class="px-2 py-1 bg-purple-900/50 backdrop-blur-sm text-purple-200 rounded-full text-xs font-medium transform hover:scale-105 transition-all duration-300">
+                      Java
+                    </span>
+                    <span class="px-2 py-1 bg-purple-900/50 backdrop-blur-sm text-purple-200 rounded-full text-xs font-medium transform hover:scale-105 transition-all duration-300">
+                      JavaFX
+                    </span>
+                    <span class="px-2 py-1 bg-purple-900/50 backdrop-blur-sm text-purple-200 rounded-full text-xs font-medium transform hover:scale-105 transition-all duration-300">
+                      OOP
+                    </span>
+                    <span class="px-2 py-1 bg-gray-700/50 backdrop-blur-sm text-gray-400 rounded-full text-xs font-medium">
+                      +2 more
+                    </span>
+                  </div>
+                  
+                  <div class="flex space-x-3">
+                    <a href="https://github.com/Mariam-Elbishbeashy/restaurant-management-system" target="_blank" rel="noopener noreferrer" class="flex items-center px-3 py-2 bg-gray-700/50 backdrop-blur-sm text-white rounded-lg hover:bg-gray-600/50 transition-all duration-300 text-sm flex-1 justify-center transform hover:scale-105 hover:shadow-lg">
+                      <i data-lucide="github" class="mr-2"></i>
+                      Code
+                    </a>
+                    <a href="https://example.com" target="_blank" rel="noopener noreferrer" class="flex items-center px-3 py-2 bg-gradient-to-r from-purple-600 to-violet-600 text-white rounded-lg hover:from-purple-700 hover:to-violet-700 transition-all duration-300 text-sm flex-1 justify-center transform hover:scale-105 hover:shadow-lg hover:shadow-purple-500/50">
+                      <i data-lucide="external-link" class="mr-2"></i>
+                      Demo
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Project 4 -->
+              <div class="group bg-gray-800/50 backdrop-blur-sm rounded-xl shadow-2xl hover:shadow-purple-500/20 transition-all duration-500 overflow-hidden transform hover:scale-105 hover:-translate-y-2">
+                <div class="relative overflow-hidden">
+                  <img src="https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Portfolio Website" class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500">
+                  <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <div class="absolute top-4 left-4">
+                    <div class="flex items-center px-3 py-1 bg-gradient-to-r from-purple-600 to-violet-600 text-white rounded-full text-sm font-medium shadow-lg">
+                      <i data-lucide="zap" class="mr-1"></i>
+                      Featured
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="p-6">
+                  <h3 class="text-xl font-bold text-white mb-3 transform hover:scale-105 transition-all duration-300">
+                    Habit Harbor 
+                  </h3>
+                  <p class="text-gray-300 mb-4 text-sm leading-relaxed">
+                    A habit-tracking web app to help users build and maintain daily routines. Users can log, update, and visualize their habits in a simple, interactive interface.
+                  </p>
+                  
+                  <div class="flex flex-wrap gap-2 mb-4">
+                    <span class="px-2 py-1 bg-purple-900/50 backdrop-blur-sm text-purple-200 rounded-full text-xs font-medium transform hover:scale-105 transition-all duration-300">
+                      nodejs
+                    </span>
+                    <span class="px-2 py-1 bg-purple-900/50 backdrop-blur-sm text-purple-200 rounded-full text-xs font-medium transform hover:scale-105 transition-all duration-300">
+                      expressjs
+                    </span>
+                    <span class="px-2 py-1 bg-purple-900/50 backdrop-blur-sm text-purple-200 rounded-full text-xs font-medium transform hover:scale-105 transition-all duration-300">
+                      mangodb
+                    </span>
+                    <span class="px-2 py-1 bg-gray-700/50 backdrop-blur-sm text-gray-400 rounded-full text-xs font-medium">
+                      +3 more
+                    </span>
+                  </div>
+                  
+                  <div class="flex space-x-3">
+                    <a href="https://github.com/Mariam-Elbishbeashy/HabitHarbor-Final-Project" target="_blank" rel="noopener noreferrer" class="flex items-center px-3 py-2 bg-gray-700/50 backdrop-blur-sm text-white rounded-lg hover:bg-gray-600/50 transition-all duration-300 text-sm flex-1 justify-center transform hover:scale-105 hover:shadow-lg">
+                      <i data-lucide="github" class="mr-2"></i>
+                      Code
+                    </a>
+                    <a href="https://example.com" target="_blank" rel="noopener noreferrer" class="flex items-center px-3 py-2 bg-gradient-to-r from-purple-600 to-violet-600 text-white rounded-lg hover:from-purple-700 hover:to-violet-700 transition-all duration-300 text-sm flex-1 justify-center transform hover:scale-105 hover:shadow-lg hover:shadow-purple-500/50">
+                      <i data-lucide="external-link" class="mr-2"></i>
+                      Demo
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Project 5 -->
+              <div class="group bg-gray-800/50 backdrop-blur-sm rounded-xl shadow-2xl hover:shadow-purple-500/20 transition-all duration-500 overflow-hidden transform hover:scale-105 hover:-translate-y-2">
+                <div class="relative overflow-hidden">
+                  <img src="https://images.pexels.com/photos/267350/pexels-photo-267350.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Social Media Dashboard" class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500">
+                  <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <div class="absolute top-4 left-4">
+                    <div class="flex items-center px-3 py-1 bg-gradient-to-r from-purple-600 to-violet-600 text-white rounded-full text-sm font-medium shadow-lg">
+                      <i data-lucide="zap" class="mr-1"></i>
+                      Featured
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="p-6">
+                  <h3 class="text-xl font-bold text-white mb-3 transform hover:scale-105 transition-all duration-300">
+                    Language Learning Chatbot Platform
+                  </h3>
+                  <p class="text-gray-300 mb-4 text-sm leading-relaxed">
+                    A language learning chatbot platform to help users practice conversations in different languages. Built using PHP and MySQL with a simple, user-friendly chat interface.
+                  </p>
+                  
+                  <div class="flex flex-wrap gap-2 mb-4">
+                    <span class="px-2 py-1 bg-purple-900/50 backdrop-blur-sm text-purple-200 rounded-full text-xs font-medium transform hover:scale-105 transition-all duration-300">
+                      Php
+                    </span>
+                    <span class="px-2 py-1 bg-purple-900/50 backdrop-blur-sm text-purple-200 rounded-full text-xs font-medium transform hover:scale-105 transition-all duration-300">
+                      js
+                    </span>
+                    <span class="px-2 py-1 bg-purple-900/50 backdrop-blur-sm text-purple-200 rounded-full text-xs font-medium transform hover:scale-105 transition-all duration-300">
+                      mysql-database
+                    </span>
+                    <span class="px-2 py-1 bg-gray-700/50 backdrop-blur-sm text-gray-400 rounded-full text-xs font-medium">
+                      +1 more
+                    </span>
+                  </div>
+                  
+                  <div class="flex space-x-3">
+                    <a href="https://github.com/Mariam-Elbishbeashy/Language-Learning-Chatbot-Project" target="_blank" rel="noopener noreferrer" class="flex items-center px-3 py-2 bg-gray-700/50 backdrop-blur-sm text-white rounded-lg hover:bg-gray-600/50 transition-all duration-300 text-sm flex-1 justify-center transform hover:scale-105 hover:shadow-lg">
+                      <i data-lucide="github" class="mr-2"></i>
+                      Code
+                    </a>
+                    <a href="https://example.com" target="_blank" rel="noopener noreferrer" class="flex items-center px-3 py-2 bg-gradient-to-r from-purple-600 to-violet-600 text-white rounded-lg hover:from-purple-700 hover:to-violet-700 transition-all duration-300 text-sm flex-1 justify-center transform hover:scale-105 hover:shadow-lg hover:shadow-purple-500/50">
+                      <i data-lucide="external-link" class="mr-2"></i>
+                      Demo
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Project 6 -->
+              <div class="group bg-gray-800/50 backdrop-blur-sm rounded-xl shadow-2xl hover:shadow-purple-500/20 transition-all duration-500 overflow-hidden transform hover:scale-105 hover:-translate-y-2">
+                <div class="relative overflow-hidden">
+                  <img src="https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=600" alt="AI Chat Application" class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500">
+                  <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <div class="absolute top-4 left-4">
+                    <div class="flex items-center px-3 py-1 bg-gradient-to-r from-purple-600 to-violet-600 text-white rounded-full text-sm font-medium shadow-lg">
+                      <i data-lucide="zap" class="mr-1"></i>
+                      Featured
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="p-6">
+                  <h3 class="text-xl font-bold text-white mb-3 transform hover:scale-105 transition-all duration-300">
+                    Credit Card Approval Prediction
+                  </h3>
+                  <p class="text-gray-300 mb-4 text-sm leading-relaxed">
+                    A classification-based card fraud detection system using KNN, neural networks, and decision tree classifiers. Features are selected using genetic algorithms to improve accuracy and performance.
+                  </p>
+                  
+                  <div class="flex flex-wrap gap-2 mb-4">
+                    <span class="px-2 py-1 bg-purple-900/50 backdrop-blur-sm text-purple-200 rounded-full text-xs font-medium transform hover:scale-105 transition-all duration-300">
+                      Machine learning
+                    </span>
+                    <span class="px-2 py-1 bg-purple-900/50 backdrop-blur-sm text-purple-200 rounded-full text-xs font-medium transform hover:scale-105 transition-all duration-300">
+                      jupyter notebook
+                    </span>
+                    <span class="px-2 py-1 bg-purple-900/50 backdrop-blur-sm text-purple-200 rounded-full text-xs font-medium transform hover:scale-105 transition-all duration-300">
+                      preprocessing data
+                    </span>
+                  </div>
+                  
+                  <div class="flex space-x-3">
+                    <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="flex items-center px-3 py-2 bg-gray-700/50 backdrop-blur-sm text-white rounded-lg hover:bg-gray-600/50 transition-all duration-300 text-sm flex-1 justify-center transform hover:scale-105 hover:shadow-lg">
+                      <i data-lucide="github" class="mr-2"></i>
+                      Code
+                    </a>
+                    <a href="https://example.com" target="_blank" rel="noopener noreferrer" class="flex items-center px-3 py-2 bg-gradient-to-r from-purple-600 to-violet-600 text-white rounded-lg hover:from-purple-700 hover:to-violet-700 transition-all duration-300 text-sm flex-1 justify-center transform hover:scale-105 hover:shadow-lg hover:shadow-purple-500/50">
+                      <i data-lucide="external-link" class="mr-2"></i>
+                      Demo
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              
+            <!-- Project 7 -->
+              <div class="group bg-gray-800/50 backdrop-blur-sm rounded-xl shadow-2xl hover:shadow-purple-500/20 transition-all duration-500 overflow-hidden transform hover:scale-105 hover:-translate-y-2">
+                <div class="relative overflow-hidden">
+                  <img src="https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg?auto=compress&cs=tinysrgb&w=600" alt="E-Commerce Platform" class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500">
+                  <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <div class="absolute top-4 left-4">
+                    <div class="flex items-center px-3 py-1 bg-gradient-to-r from-purple-600 to-violet-600 text-white rounded-full text-sm font-medium shadow-lg">
+                      <i data-lucide="zap" class="mr-1"></i>
+                      Featured
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="p-6">
+                  <h3 class="text-xl font-bold text-white mb-3 transform hover:scale-105 transition-all duration-300">
+                    Shadow Detection and Removal Machine Learning
+                  </h3>
+                  <p class="text-gray-300 mb-4 text-sm leading-relaxed">
+                    Shadow Detection using machine learning model, Shadow Removal using image processing techniques.
+                  </p>
+                  
+                  <div class="flex flex-wrap gap-2 mb-4">
+                    <span class="px-2 py-1 bg-purple-900/50 backdrop-blur-sm text-purple-200 rounded-full text-xs font-medium transform hover:scale-105 transition-all duration-300">
+                      Python
+                    </span>
+                    <span class="px-2 py-1 bg-purple-900/50 backdrop-blur-sm text-purple-200 rounded-full text-xs font-medium transform hover:scale-105 transition-all duration-300">
+                      Machine Learning
+                    </span>
+                    <span class="px-2 py-1 bg-purple-900/50 backdrop-blur-sm text-purple-200 rounded-full text-xs font-medium transform hover:scale-105 transition-all duration-300">
+                      Image Processing
+                    </span>
+                  </div>
+                  
+                  <div class="flex space-x-3">
+                    <a href="https://github.com/Mariam-Elbishbeashy/Shadow_Detection_Removal_IP_ML" target="_blank" rel="noopener noreferrer" class="flex items-center px-3 py-2 bg-gray-700/50 backdrop-blur-sm text-white rounded-lg hover:bg-gray-600/50 transition-all duration-300 text-sm flex-1 justify-center transform hover:scale-105 hover:shadow-lg">
+                      <i data-lucide="github" class="mr-2"></i>
+                      Code
+                    </a>
+                    <a href="https://example.com" target="_blank" rel="noopener noreferrer" class="flex items-center px-3 py-2 bg-gradient-to-r from-purple-600 to-violet-600 text-white rounded-lg hover:from-purple-700 hover:to-violet-700 transition-all duration-300 text-sm flex-1 justify-center transform hover:scale-105 hover:shadow-lg hover:shadow-purple-500/50">
+                      <i data-lucide="external-link" class="mr-2"></i>
+                      Demo
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Project 8 -->
+              <div class="group bg-gray-800/50 backdrop-blur-sm rounded-xl shadow-2xl hover:shadow-purple-500/20 transition-all duration-500 overflow-hidden transform hover:scale-105 hover:-translate-y-2">
+                <div class="relative overflow-hidden">
+                  <img src="https://images.pexels.com/photos/7688336/pexels-photo-7688336.jpeg?auto=compress&cs=tinysrgb&w=600" alt="scheduling system" class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500">
+                  <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <div class="absolute top-4 left-4">
+                    <div class="flex items-center px-3 py-1 bg-gradient-to-r from-purple-600 to-violet-600 text-white rounded-full text-sm font-medium shadow-lg">
+                      <i data-lucide="zap" class="mr-1"></i>
+                      Featured
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="p-6">
+                  <h3 class="text-xl font-bold text-white mb-3 transform hover:scale-105 transition-all duration-300">
+                    Shadow Dection and Removal Deep Learning
+                  </h3>
+                  <p class="text-gray-300 mb-4 text-sm leading-relaxed">
+                    Shadow Detection using VGG16 model, Shadow Removal using image processing techniques.
+                  </p>
+                  
+                  <div class="flex flex-wrap gap-2 mb-4">
+                    <span class="px-2 py-1 bg-purple-900/50 backdrop-blur-sm text-purple-200 rounded-full text-xs font-medium transform hover:scale-105 transition-all duration-300">
+                      Deep learning
+                    </span>
+                    <span class="px-2 py-1 bg-purple-900/50 backdrop-blur-sm text-purple-200 rounded-full text-xs font-medium transform hover:scale-105 transition-all duration-300">
+                      image processing
+                    </span>
+                    <span class="px-2 py-1 bg-purple-900/50 backdrop-blur-sm text-purple-200 rounded-full text-xs font-medium transform hover:scale-105 transition-all duration-300">
+                      cnn
+                    </span>
+                    <span class="px-2 py-1 bg-gray-700/50 backdrop-blur-sm text-gray-400 rounded-full text-xs font-medium">
+                      +2 more
+                    </span>
+                  </div>
+                  
+                  <div class="flex space-x-3">
+                    <a href="https://github.com/Mariam-Elbishbeashy/Shadow_Detection_Removal_DL" target="_blank" rel="noopener noreferrer" class="flex items-center px-3 py-2 bg-gray-700/50 backdrop-blur-sm text-white rounded-lg hover:bg-gray-600/50 transition-all duration-300 text-sm flex-1 justify-center transform hover:scale-105 hover:shadow-lg">
+                      <i data-lucide="github" class="mr-2"></i>
+                      Code
+                    </a>
+                    <a href="https://example.com" target="_blank" rel="noopener noreferrer" class="flex items-center px-3 py-2 bg-gradient-to-r from-purple-600 to-violet-600 text-white rounded-lg hover:from-purple-700 hover:to-violet-700 transition-all duration-300 text-sm flex-1 justify-center transform hover:scale-105 hover:shadow-lg hover:shadow-purple-500/50">
+                      <i data-lucide="external-link" class="mr-2"></i>
+                      Demo
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Project 9 -->
+              <div class="group bg-gray-800/50 backdrop-blur-sm rounded-xl shadow-2xl hover:shadow-purple-500/20 transition-all duration-500 overflow-hidden transform hover:scale-105 hover:-translate-y-2">
+                <div class="relative overflow-hidden">
+                  <img src="https://images.pexels.com/photos/1118873/pexels-photo-1118873.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Weather Dashboard" class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500">
+                  <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <div class="absolute top-4 left-4">
+                    <div class="flex items-center px-3 py-1 bg-gradient-to-r from-purple-600 to-violet-600 text-white rounded-full text-sm font-medium shadow-lg">
+                      <i data-lucide="zap" class="mr-1"></i>
+                      Featured
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="p-6">
+                  <h3 class="text-xl font-bold text-white mb-3 transform hover:scale-105 transition-all duration-300">
+                    House Prices Prediction 
+                  </h3>
+                  <p class="text-gray-300 mb-4 text-sm leading-relaxed">
+                    A machine learning project for house price prediction using polynomial regression, Lasso, and Ridge models. Includes preprocessing, feature engineering and hyperparameter tuning.
+                  </p>
+                  
+                  <div class="flex flex-wrap gap-2 mb-4">
+                    <span class="px-2 py-1 bg-purple-900/50 backdrop-blur-sm text-purple-200 rounded-full text-xs font-medium transform hover:scale-105 transition-all duration-300">
+                      machine learning
+                    </span>
+                    <span class="px-2 py-1 bg-purple-900/50 backdrop-blur-sm text-purple-200 rounded-full text-xs font-medium transform hover:scale-105 transition-all duration-300">
+                      jupyter notebook
+                    </span>
+                    <span class="px-2 py-1 bg-purple-900/50 backdrop-blur-sm text-purple-200 rounded-full text-xs font-medium transform hover:scale-105 transition-all duration-300">
+                      regression 
+                    </span>
+                  </div>
+                  
+                  <div class="flex space-x-3">
+                    <a href="https://github.com/Mariam-Elbishbeashy/restaurant-management-system" target="_blank" rel="noopener noreferrer" class="flex items-center px-3 py-2 bg-gray-700/50 backdrop-blur-sm text-white rounded-lg hover:bg-gray-600/50 transition-all duration-300 text-sm flex-1 justify-center transform hover:scale-105 hover:shadow-lg">
+                      <i data-lucide="github" class="mr-2"></i>
+                      Code
+                    </a>
+                    <a href="https://example.com" target="_blank" rel="noopener noreferrer" class="flex items-center px-3 py-2 bg-gradient-to-r from-purple-600 to-violet-600 text-white rounded-lg hover:from-purple-700 hover:to-violet-700 transition-all duration-300 text-sm flex-1 justify-center transform hover:scale-105 hover:shadow-lg hover:shadow-purple-500/50">
+                      <i data-lucide="external-link" class="mr-2"></i>
+                      Demo
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Project 10 -->
+              <div class="group bg-gray-800/50 backdrop-blur-sm rounded-xl shadow-2xl hover:shadow-purple-500/20 transition-all duration-500 overflow-hidden transform hover:scale-105 hover:-translate-y-2">
+                <div class="relative overflow-hidden">
+                  <img src="https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Portfolio Website" class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500">
+                  <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <div class="absolute top-4 left-4">
+                    <div class="flex items-center px-3 py-1 bg-gradient-to-r from-purple-600 to-violet-600 text-white rounded-full text-sm font-medium shadow-lg">
+                      <i data-lucide="zap" class="mr-1"></i>
+                      Featured
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="p-6">
+                  <h3 class="text-xl font-bold text-white mb-3 transform hover:scale-105 transition-all duration-300">
+                    Quiz System 
+                  </h3>
+                  <p class="text-gray-300 mb-4 text-sm leading-relaxed">
+                    A responsive web-based quiz platform where users take timed knowledge tests or create custom quizzes, featuring progress tracking, instant scoring, and detailed analytics for learners - accessible on any device.
+                  </p>
+                  
+                  <div class="flex flex-wrap gap-2 mb-4">
+                    <span class="px-2 py-1 bg-purple-900/50 backdrop-blur-sm text-purple-200 rounded-full text-xs font-medium transform hover:scale-105 transition-all duration-300">
+                      Html
+                    </span>
+                    <span class="px-2 py-1 bg-purple-900/50 backdrop-blur-sm text-purple-200 rounded-full text-xs font-medium transform hover:scale-105 transition-all duration-300">
+                      css
+                    </span>
+                    <span class="px-2 py-1 bg-purple-900/50 backdrop-blur-sm text-purple-200 rounded-full text-xs font-medium transform hover:scale-105 transition-all duration-300">
+                      js
+                    </span>
+                  </div>
+                  
+                  <div class="flex space-x-3">
+                    <a href="https://github.com/Mariam-Elbishbeashy/Quiz-System-Project" target="_blank" rel="noopener noreferrer" class="flex items-center px-3 py-2 bg-gray-700/50 backdrop-blur-sm text-white rounded-lg hover:bg-gray-600/50 transition-all duration-300 text-sm flex-1 justify-center transform hover:scale-105 hover:shadow-lg">
+                      <i data-lucide="github" class="mr-2"></i>
+                      Code
+                    </a>
+                    <a href="https://mariam-elbishbeashy.github.io/Quiz-System-Project/" target="_blank" rel="noopener noreferrer" class="flex items-center px-3 py-2 bg-gradient-to-r from-purple-600 to-violet-600 text-white rounded-lg hover:from-purple-700 hover:to-violet-700 transition-all duration-300 text-sm flex-1 justify-center transform hover:scale-105 hover:shadow-lg hover:shadow-purple-500/50">
+                      <i data-lucide="external-link" class="mr-2"></i>
+                      Demo
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Project 11 -->
+              <div class="group bg-gray-800/50 backdrop-blur-sm rounded-xl shadow-2xl hover:shadow-purple-500/20 transition-all duration-500 overflow-hidden transform hover:scale-105 hover:-translate-y-2">
+                <div class="relative overflow-hidden">
+                  <img src="https://images.pexels.com/photos/267350/pexels-photo-267350.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Social Media Dashboard" class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500">
+                  <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <div class="absolute top-4 left-4">
+                    <div class="flex items-center px-3 py-1 bg-gradient-to-r from-purple-600 to-violet-600 text-white rounded-full text-sm font-medium shadow-lg">
+                      <i data-lucide="zap" class="mr-1"></i>
+                      Featured
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="p-6">
+                  <h3 class="text-xl font-bold text-white mb-3 transform hover:scale-105 transition-all duration-300">
+                    Grammar Autocorrection NLP
+                  </h3>
+                  <p class="text-gray-300 mb-4 text-sm leading-relaxed">
+                    This project develops an automated grammar correction system using machine learning and deep learning techniques to detect and fix errors in English sentences. It aims to enhance written communication by providing accurate and efficient corrections.
+                  </p>
+                  
+                  <div class="flex flex-wrap gap-2 mb-4">
+                    <span class="px-2 py-1 bg-purple-900/50 backdrop-blur-sm text-purple-200 rounded-full text-xs font-medium transform hover:scale-105 transition-all duration-300">
+                      NLP
+                    </span>
+                    <span class="px-2 py-1 bg-purple-900/50 backdrop-blur-sm text-purple-200 rounded-full text-xs font-medium transform hover:scale-105 transition-all duration-300">
+                      Machine Learning
+                    </span>
+                    <span class="px-2 py-1 bg-purple-900/50 backdrop-blur-sm text-purple-200 rounded-full text-xs font-medium transform hover:scale-105 transition-all duration-300">
+                      Deep Learning
+                    </span>
+                  </div>
+                  
+                  <div class="flex space-x-3">
+                    <a href="https://github.com/Mariam-Elbishbeashy/Grammar-Autocorrection-NLP" target="_blank" rel="noopener noreferrer" class="flex items-center px-3 py-2 bg-gray-700/50 backdrop-blur-sm text-white rounded-lg hover:bg-gray-600/50 transition-all duration-300 text-sm flex-1 justify-center transform hover:scale-105 hover:shadow-lg">
+                      <i data-lucide="github" class="mr-2"></i>
+                      Code
+                    </a>
+                    <a href="https://example.com" target="_blank" rel="noopener noreferrer" class="flex items-center px-3 py-2 bg-gradient-to-r from-purple-600 to-violet-600 text-white rounded-lg hover:from-purple-700 hover:to-violet-700 transition-all duration-300 text-sm flex-1 justify-center transform hover:scale-105 hover:shadow-lg hover:shadow-purple-500/50">
+                      <i data-lucide="external-link" class="mr-2"></i>
+                      Demo
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+               <!-- Project 12 -->
+              <div class="group bg-gray-800/50 backdrop-blur-sm rounded-xl shadow-2xl hover:shadow-purple-500/20 transition-all duration-500 overflow-hidden transform hover:scale-105 hover:-translate-y-2">
+                <div class="relative overflow-hidden">
+                  <img src="https://images.pexels.com/photos/1118873/pexels-photo-1118873.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Weather Dashboard" class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500">
+                  <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <div class="absolute top-4 left-4">
+                    <div class="flex items-center px-3 py-1 bg-gradient-to-r from-purple-600 to-violet-600 text-white rounded-full text-sm font-medium shadow-lg">
+                      <i data-lucide="zap" class="mr-1"></i>
+                      Featured
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="p-6">
+                  <h3 class="text-xl font-bold text-white mb-3 transform hover:scale-105 transition-all duration-300">
+                    Healthcare Classification 
+                  </h3>
+                  <p class="text-gray-300 mb-4 text-sm leading-relaxed">
+                    This project builds a system to classify medical test results using machine learning. It includes data cleaning, feature encoding, dimensionality reduction (PCA), and compares models like Logistic Regression, MLP, Naïve Bayes, SVM, and XGBoost to find the most effective approach.
+                  </p>
+                  
+                  <div class="flex flex-wrap gap-2 mb-4">
+                    <span class="px-2 py-1 bg-purple-900/50 backdrop-blur-sm text-purple-200 rounded-full text-xs font-medium transform hover:scale-105 transition-all duration-300">
+                      Machine Learing
+                    </span>
+                    <span class="px-2 py-1 bg-purple-900/50 backdrop-blur-sm text-purple-200 rounded-full text-xs font-medium transform hover:scale-105 transition-all duration-300">
+                      svm
+                    </span>
+                    <span class="px-2 py-1 bg-purple-900/50 backdrop-blur-sm text-purple-200 rounded-full text-xs font-medium transform hover:scale-105 transition-all duration-300">
+                      MLP
+                    </span>
+                    <span class="px-2 py-1 bg-gray-700/50 backdrop-blur-sm text-gray-400 rounded-full text-xs font-medium">
+                      +5 more
+                    </span>
+                  </div>
+                  
+                  <div class="flex space-x-3">
+                    <a href="https://github.com/Mariam-Elbishbeashy/Healthcare-Classification-ML" target="_blank" rel="noopener noreferrer" class="flex items-center px-3 py-2 bg-gray-700/50 backdrop-blur-sm text-white rounded-lg hover:bg-gray-600/50 transition-all duration-300 text-sm flex-1 justify-center transform hover:scale-105 hover:shadow-lg">
+                      <i data-lucide="github" class="mr-2"></i>
+                      Code
+                    </a>
+                    <a href="https://example.com" target="_blank" rel="noopener noreferrer" class="flex items-center px-3 py-2 bg-gradient-to-r from-purple-600 to-violet-600 text-white rounded-lg hover:from-purple-700 hover:to-violet-700 transition-all duration-300 text-sm flex-1 justify-center transform hover:scale-105 hover:shadow-lg hover:shadow-purple-500/50">
+                      <i data-lucide="external-link" class="mr-2"></i>
+                      Demo
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="text-center">
+              <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-8 py-4 bg-gradient-to-r from-purple-600 to-violet-600 text-white rounded-lg font-semibold hover:from-purple-700 hover:to-violet-700 transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/50">
+                <i data-lucide="github" class="mr-2"></i>
+                View All Projects on GitHub
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Experience Section -->
+      <!-- <section id="experience" class="py-20 bg-gray-800 relative overflow-hidden">
+        <div class="absolute inset-0 overflow-hidden">
+          <div class="absolute top-1/3 left-1/4 w-72 h-72 bg-purple-500/5 rounded-full blur-3xl animate-pulse delay-200"></div>
+          <div class="absolute bottom-1/3 right-1/4 w-96 h-96 bg-violet-500/5 rounded-full blur-3xl animate-pulse delay-800"></div>
+        </div>
+
+        <div class="container mx-auto px-6 relative z-10">
+          <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-16">
+              <h2 class="text-4xl md:text-5xl font-bold text-white mb-6 transform hover:scale-105 transition-all duration-300">
+                Work Experience
+              </h2>
+              <p class="text-xl text-gray-400 max-w-3xl mx-auto">
+                My professional journey building amazing products and working with talented teams.
+              </p>
+            </div>
+
+            <div class="relative">
+              <div class="absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-purple-600 to-violet-600 shadow-lg"></div>
+
+              <div class="space-y-12"> -->
+                <!-- Experience 1 -->
+                <!-- <div class="relative pl-20 transform hover:scale-105 transition-all duration-500"> -->
+                  <!-- Timeline dot -->
+                  <!-- <div class="absolute left-6 w-4 h-4 bg-gradient-to-r from-purple-600 to-violet-600 rounded-full border-4 border-gray-800 shadow-lg shadow-purple-500/50"></div>
+
+                  <div class="bg-gray-900/50 backdrop-blur-sm rounded-xl shadow-2xl p-8 hover:shadow-purple-500/20 transition-all duration-500 hover:-translate-y-1">
+                    <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+                      <div>
+                        <h3 class="text-2xl font-bold text-white mb-2 transform hover:scale-105 transition-all duration-300">
+                          Senior Full Stack Developer
+                        </h3>
+                        <h4 class="text-xl text-purple-400 font-semibold mb-2">
+                          TechCorp Solutions
+                        </h4>
+                      </div>
+                      <div class="flex flex-col md:items-end space-y-2">
+                        <div class="flex items-center text-gray-400">
+                          <i data-lucide="calendar" class="mr-2"></i>
+                          <span class="font-medium">2022 - Present</span>
+                        </div>
+                        <div class="flex items-center text-gray-400">
+                          <i data-lucide="map-pin" class="mr-2"></i>
+                          <span>San Francisco, CA</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <p class="text-gray-300 mb-6 leading-relaxed">
+                      Leading development of enterprise web applications using React, Node.js, and AWS. Mentoring junior developers and architecting scalable solutions for high-traffic applications.
+                    </p>
+
+                    <div>
+                      <h5 class="text-lg font-semibold text-white mb-3">
+                        Key Achievements:
+                      </h5>
+                      <ul class="space-y-2">
+                        <li class="flex items-start text-gray-300 transform hover:scale-105 transition-all duration-300">
+                          <div class="w-2 h-2 bg-gradient-to-r from-purple-600 to-violet-600 rounded-full mt-2 mr-3 flex-shrink-0 shadow-lg"></div>
+                          <span>Improved application performance by 40% through optimization</span>
+                        </li>
+                        <li class="flex items-start text-gray-300 transform hover:scale-105 transition-all duration-300">
+                          <div class="w-2 h-2 bg-gradient-to-r from-purple-600 to-violet-600 rounded-full mt-2 mr-3 flex-shrink-0 shadow-lg"></div>
+                          <span>Led a team of 5 developers on critical client projects</span>
+                        </li>
+                        <li class="flex items-start text-gray-300 transform hover:scale-105 transition-all duration-300">
+                          <div class="w-2 h-2 bg-gradient-to-r from-purple-600 to-violet-600 rounded-full mt-2 mr-3 flex-shrink-0 shadow-lg"></div>
+                          <span>Implemented CI/CD pipelines reducing deployment time by 60%</span>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div> -->
+
+                <!-- Experience 2 -->
+                <!-- <div class="relative pl-20 transform hover:scale-105 transition-all duration-500"> -->
+                  <!-- Timeline dot -->
+                  <!-- <div class="absolute left-6 w-4 h-4 bg-gradient-to-r from-purple-600 to-violet-600 rounded-full border-4 border-gray-800 shadow-lg shadow-purple-500/50"></div>
+
+                  <div class="bg-gray-900/50 backdrop-blur-sm rounded-xl shadow-2xl p-8 hover:shadow-purple-500/20 transition-all duration-500 hover:-translate-y-1">
+                    <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+                      <div>
+                        <h3 class="text-2xl font-bold text-white mb-2 transform hover:scale-105 transition-all duration-300">
+                          Full Stack Developer
+                        </h3>
+                        <h4 class="text-xl text-purple-400 font-semibold mb-2">
+                          StartupXYZ
+                        </h4>
+                      </div>
+                      <div class="flex flex-col md:items-end space-y-2">
+                        <div class="flex items-center text-gray-400">
+                          <i data-lucide="calendar" class="mr-2"></i>
+                          <span class="font-medium">2020 - 2022</span>
+                        </div>
+                        <div class="flex items-center text-gray-400">
+                          <i data-lucide="map-pin" class="mr-2"></i>
+                          <span>Remote</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <p class="text-gray-300 mb-6 leading-relaxed">
+                      Developed and maintained multiple client-facing applications. Collaborated with design teams to implement pixel-perfect UI components and integrated third-party APIs.
+                    </p>
+
+                    <div>
+                      <h5 class="text-lg font-semibold text-white mb-3">
+                        Key Achievements:
+                      </h5>
+                      <ul class="space-y-2">
+                        <li class="flex items-start text-gray-300 transform hover:scale-105 transition-all duration-300">
+                          <div class="w-2 h-2 bg-gradient-to-r from-purple-600 to-violet-600 rounded-full mt-2 mr-3 flex-shrink-0 shadow-lg"></div>
+                          <span>Built 3 major web applications from scratch</span>
+                        </li>
+                        <li class="flex items-start text-gray-300 transform hover:scale-105 transition-all duration-300">
+                          <div class="w-2 h-2 bg-gradient-to-r from-purple-600 to-violet-600 rounded-full mt-2 mr-3 flex-shrink-0 shadow-lg"></div>
+                          <span>Reduced bug reports by 35% through improved testing practices</span>
+                        </li>
+                        <li class="flex items-start text-gray-300 transform hover:scale-105 transition-all duration-300">
+                          <div class="w-2 h-2 bg-gradient-to-r from-purple-600 to-violet-600 rounded-full mt-2 mr-3 flex-shrink-0 shadow-lg"></div>
+                          <span>Collaborated with cross-functional teams of 15+ members</span>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+
+                
+              </div>
+            </div>
+          </div>
+        </div>
+      </section> -->
+      <!-- Certifications Section -->
+        <section id="certifications" class="py-20 bg-gray-800 relative overflow-hidden">
+        <!-- Floating background elements -->
+        <div class="absolute inset-0 overflow-hidden">
+            <div class="absolute top-1/3 left-1/4 w-72 h-72 bg-indigo-500/5 rounded-full blur-3xl animate-pulse delay-200"></div>
+            <div class="absolute bottom-1/3 right-1/4 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl animate-pulse delay-800"></div>
+        </div>
+
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">
+                Certifications
+                </h2>
+                <p class="text-xl text-gray-400 max-w-3xl mx-auto">
+                Official recognition of my technical competencies and professional development
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Certification 1 -->
+                <div class="bg-gray-900/50 backdrop-blur-sm rounded-xl shadow-2xl p-8 transform hover:scale-105 hover:-translate-y-2 transition-all duration-500 hover:shadow-indigo-500/20">
+                <div class="flex items-start mb-4">
+                    <div class="p-3 bg-gradient-to-r from-indigo-600 to-blue-600 rounded-lg shadow-lg flex-shrink-0">
+                    <i data-lucide="award" class="text-white"></i>
+                    </div>
+                    <div class="ml-4">
+                    <h3 class="text-2xl font-bold text-white">HP Resume Writing and Job Interviewing</h3>
+                    <p class="text-indigo-400 font-medium">HP Life</p>
+                    <p class="text-gray-400 text-sm mt-1">Issued Apr 2024 · No Expiration</p>
+                    </div>
+                </div>
+                <p class="text-gray-300 mt-4">
+                    Demonstrated ability to develop and maintain applications on AWS platform, including serverless architectures, CI/CD pipelines, and cloud security best practices.
+                </p>
+                <div class="mt-6">
+                    <a href="https://www.life-global.org/certificate/68c3820c-b697-4742-8423-9bb3ddddf249" class="inline-flex items-center text-indigo-400 hover:text-indigo-300 transition-colors duration-300">
+                    <span>View Credential</span>
+                    <i data-lucide="arrow-up-right" class="ml-1 w-4 h-4"></i>
+                    </a>
+                </div>
+                </div>
+
+                <!-- Certification 2 -->
+                <div class="bg-gray-900/50 backdrop-blur-sm rounded-xl shadow-2xl p-8 transform hover:scale-105 hover:-translate-y-2 transition-all duration-500 hover:shadow-blue-500/20">
+                <div class="flex items-start mb-4">
+                    <div class="p-3 bg-gradient-to-r from-blue-600 to-cyan-600 rounded-lg shadow-lg flex-shrink-0">
+                    <i data-lucide="award" class="text-white"></i>
+                    </div>
+                    <div class="ml-4">
+                    <h3 class="text-2xl font-bold text-white">Web Development internship</h3>
+                    <p class="text-blue-400 font-medium">Prodigy InfoTech</p>
+                    <p class="text-gray-400 text-sm mt-1">Issued Apr 2024 · No Expiration</p>
+                    </div>
+                </div>
+                <p class="text-gray-300 mt-4">
+                    Certified in data cleaning, analysis, and visualization using tools like SQL, R, Tableau, and advanced spreadsheet functions.
+                </p>
+                <div class="mt-6">
+                    <a href="https://prodigyinfotech.dev/verify?cin=PIT/MAR24/4609" class="inline-flex items-center text-blue-400 hover:text-blue-300 transition-colors duration-300">
+                    <span>View Credential</span>
+                    <i data-lucide="arrow-up-right" class="ml-1 w-4 h-4"></i>
+                    </a>
+                </div>
+                </div>
+
+                <!-- Certification 3 -->
+                <div class="bg-gray-900/50 backdrop-blur-sm rounded-xl shadow-2xl p-8 transform hover:scale-105 hover:-translate-y-2 transition-all duration-500 hover:shadow-green-500/20">
+                <div class="flex items-start mb-4">
+                    <div class="p-3 bg-gradient-to-r from-green-600 to-emerald-600 rounded-lg shadow-lg flex-shrink-0">
+                    <i data-lucide="award" class="text-white"></i>
+                    </div>
+                    <div class="ml-4">
+                    <h3 class="text-2xl font-bold text-white">Introduction to Artificial Intelligence</h3>
+                    <p class="text-green-400 font-medium">LinkedIn</p>
+                    <p class="text-gray-400 text-sm mt-1">Issued Jun 2024 · No Expiration</p>
+                    </div>
+                </div>
+                <p class="text-gray-300 mt-4">
+                    Validated skills in container orchestration, cluster maintenance, troubleshooting, and application lifecycle management in Kubernetes environments.
+                </p>
+                <div class="mt-6">
+                    <a href="https://www.linkedin.com/learning/certificates/a638de6b058993e1460af8d62c40e188581eac56ada226f579d607ca686d81e8" class="inline-flex items-center text-green-400 hover:text-green-300 transition-colors duration-300">
+                    <span>View Credential</span>
+                    <i data-lucide="arrow-up-right" class="ml-1 w-4 h-4"></i>
+                    </a>
+                </div>
+                </div>
+
+                <!-- Certification 4 -->
+                <div class="bg-gray-900/50 backdrop-blur-sm rounded-xl shadow-2xl p-8 transform hover:scale-105 hover:-translate-y-2 transition-all duration-500 hover:shadow-orange-500/20">
+                <div class="flex items-start mb-4">
+                    <div class="p-3 bg-gradient-to-r from-orange-600 to-amber-600 rounded-lg shadow-lg flex-shrink-0">
+                    <i data-lucide="award" class="text-white"></i>
+                    </div>
+                    <div class="ml-4">
+                    <h3 class="text-2xl font-bold text-white">Oracle Java Certified Foundations Associate</h3>
+                    <p class="text-orange-400 font-medium">Oracle</p>
+                    <p class="text-gray-400 text-sm mt-1">Issued Aug 2024 · No Expiration</p>
+                    </div>
+                </div>
+                <p class="text-gray-300 mt-4">
+                    Demonstrated foundational knowledge of cloud concepts, Azure services, security, privacy, compliance, and pricing.
+                </p>
+                <div class="mt-6">
+                    <a href="https://catalog-education.oracle.com/ords/certview/sharebadge?id=3739CE0C42BD7150869137EDC9895BBDD2254167B3201663F3438749CC3D60AC" class="inline-flex items-center text-orange-400 hover:text-orange-300 transition-colors duration-300">
+                    <span>View Credential</span>
+                    <i data-lucide="arrow-up-right" class="ml-1 w-4 h-4"></i>
+                    </a>
+                </div>
+                </div>
+
+                <!-- Certification 5 -->
+                <div class="bg-gray-900/50 backdrop-blur-sm rounded-xl shadow-2xl p-8 transform hover:scale-105 hover:-translate-y-2 transition-all duration-500 hover:shadow-pink-500/20">
+                <div class="flex items-start mb-4">
+                    <div class="p-3 bg-gradient-to-r from-pink-600 to-pink-600 rounded-lg shadow-lg flex-shrink-0">
+                    <i data-lucide="award" class="text-white"></i>
+                    </div>
+                    <div class="ml-4">
+                    <h3 class="text-2xl font-bold text-white">Machine Learning with Python</h3>
+                    <p class="text-pink-400 font-medium">Coursera ibm</p>
+                    <p class="text-gray-400 text-sm mt-1">Issued Aug 2024 · No Expiration</p>
+                    </div>
+                </div>
+                <p class="text-gray-300 mt-4">
+                    Validated skills in container orchestration, cluster maintenance, troubleshooting, and application lifecycle management in Kubernetes environments.
+                </p>
+                <div class="mt-6">
+                    <a href="https://www.credly.com/badges/ba1ba575-c370-4afc-9c96-9531ee7cbf9d/linked_in_profile" class="inline-flex items-center text-pink-400 hover:text-pink-300 transition-colors duration-300">
+                    <span>View Credential</span>
+                    <i data-lucide="arrow-up-right" class="ml-1 w-4 h-4"></i>
+                    </a>
+                </div>
+                </div>
+
+                <!-- Certification 6 -->
+                <div class="bg-gray-900/50 backdrop-blur-sm rounded-xl shadow-2xl p-8 transform hover:scale-105 hover:-translate-y-2 transition-all duration-500 hover:shadow-purple-500/20">
+                <div class="flex items-start mb-4">
+                    <div class="p-3 bg-gradient-to-r from-purple-600 to-violet-600 rounded-lg shadow-lg flex-shrink-0">
+                    <i data-lucide="award" class="text-white"></i>
+                    </div>
+                    <div class="ml-4">
+                    <h3 class="text-2xl font-bold text-white">Microsoft Azure fundamentals: Describe cloud Concepts</h3>
+                    <p class="text-purple-400 font-medium">Microsoft Learning</p>
+                    <p class="text-gray-400 text-sm mt-1">Issued Nov 2024 · No Expiration</p>
+                    </div>
+                </div>
+                <p class="text-gray-300 mt-4">
+                    Demonstrated foundational knowledge of cloud concepts, Azure services, security, privacy, compliance, and pricing.
+                </p>
+                <div class="mt-6">
+                    <a href="https://catalog-education.oracle.com/ords/certview/sharebadge?id=3739CE0C42BD7150869137EDC9895BBDD2254167B3201663F3438749CC3D60AC" class="inline-flex items-center text-purple-400 hover:text-purple-300 transition-colors duration-300">
+                    <span>View Credential</span>
+                    <i data-lucide="arrow-up-right" class="ml-1 w-4 h-4"></i>
+                    </a>
+                </div>
+                </div>
+            </div>
+            </div>
+        </div>
+        </section>
+
+        <!-- Hobbies Section -->
+        <section id="hobbies" class="py-20 bg-gray-900 relative overflow-hidden">
+        <!-- Floating background elements -->
+        <div class="absolute inset-0 overflow-hidden">
+            <div class="absolute top-1/4 right-1/4 w-96 h-96 bg-purple-500/5 rounded-full blur-3xl animate-pulse"></div>
+            <div class="absolute bottom-1/4 left-1/4 w-80 h-80 bg-violet-500/5 rounded-full blur-3xl animate-pulse delay-500"></div>
+        </div>
+
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">
+                Creative Passions
+                </h2>
+                <p class="text-xl text-gray-400 max-w-3xl mx-auto">
+                My pursuits beyond coding that fuel creativity and personal growth
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+                <!-- Video Editing -->
+                <div class="group bg-gray-800/50 backdrop-blur-sm rounded-xl shadow-2xl hover:shadow-blue-500/20 transition-all duration-500 overflow-hidden transform hover:scale-105 hover:-translate-y-2">
+                <div class="relative overflow-hidden h-48">
+                    <img src="https://images.unsplash.com/photo-1626785774573-4b799315345d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" 
+                        alt="Video Editing Setup"
+                        class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <div class="absolute top-4 left-4">
+                    <div class="flex items-center px-3 py-1 bg-gradient-to-r from-blue-600 to-cyan-600 text-white rounded-full text-sm font-medium shadow-lg">
+                        <i data-lucide="film" class="mr-1 w-4 h-4"></i>
+                        Video Production
+                    </div>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-white mb-3">Video Editing</h3>
+                    <p class="text-gray-300 mb-4 text-sm leading-relaxed">
+                    Professional video editing with 5+ years experience in Premiere Pro and After Effects. Specializing in color grading, motion graphics, and short-form content.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                    <span class="px-2 py-1 bg-blue-900/50 backdrop-blur-sm text-blue-200 rounded-full text-xs font-medium">
+                        Premiere Pro
+                    </span>
+                    <span class="px-2 py-1 bg-blue-900/50 backdrop-blur-sm text-blue-200 rounded-full text-xs font-medium">
+                        After Effects
+                    </span>
+                    <span class="px-2 py-1 bg-blue-900/50 backdrop-blur-sm text-blue-200 rounded-full text-xs font-medium">
+                        DaVinci Resolve
+                    </span>
+                    </div>
+                </div>
+                </div>
+
+                <!-- Roller Skating Coach -->
+                <div class="group bg-gray-800/50 backdrop-blur-sm rounded-xl shadow-2xl hover:shadow-pink-500/20 transition-all duration-500 overflow-hidden transform hover:scale-105 hover:-translate-y-2">
+                <div class="relative overflow-hidden h-48">
+                    <img src="https://images.unsplash.com/photo-1600046050370-4e64d8e5d467?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" 
+                        alt="Roller Skating"
+                        class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <div class="absolute top-4 left-4">
+                    <div class="flex items-center px-3 py-1 bg-gradient-to-r from-pink-600 to-rose-600 text-white rounded-full text-sm font-medium shadow-lg">
+                        <i data-lucide="skateboard" class="mr-1 w-4 h-4"></i>
+                        Certified Instructor
+                    </div>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-white mb-3">Roller Skating Coach</h3>
+                    <p class="text-gray-300 mb-4 text-sm leading-relaxed">
+                    Professional roller skating instructor specializing in artistic skating, safety training, and beginner fundamentals. Coaching for 3+ years.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                    <span class="px-2 py-1 bg-pink-900/50 backdrop-blur-sm text-pink-200 rounded-full text-xs font-medium">
+                        Artistic Skating
+                    </span>
+                    <span class="px-2 py-1 bg-pink-900/50 backdrop-blur-sm text-pink-200 rounded-full text-xs font-medium">
+                        Safety Training
+                    </span>
+                    <span class="px-2 py-1 bg-pink-900/50 backdrop-blur-sm text-pink-200 rounded-full text-xs font-medium">
+                        Choreography
+                    </span>
+                    </div>
+                </div>
+                </div>
+
+                <!-- Arts & Creativity -->
+                <div class="group bg-gray-800/50 backdrop-blur-sm rounded-xl shadow-2xl hover:shadow-purple-500/20 transition-all duration-500 overflow-hidden transform hover:scale-105 hover:-translate-y-2">
+                <div class="relative overflow-hidden h-48">
+                    <img src="https://images.unsplash.com/photo-1541961017774-22349e4a1262?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" 
+                        alt="Art Supplies"
+                        class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <div class="absolute top-4 left-4">
+                    <div class="flex items-center px-3 py-1 bg-gradient-to-r from-purple-600 to-violet-600 text-white rounded-full text-sm font-medium shadow-lg">
+                        <i data-lucide="palette" class="mr-1 w-4 h-4"></i>
+                        Mixed Media
+                    </div>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-white mb-3">Arts & Creativity</h3>
+                    <p class="text-gray-300 mb-4 text-sm leading-relaxed">
+                    Multidisciplinary artist working in digital illustration, traditional media, and creative writing. Exhibited in 3 local art shows.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                    <span class="px-2 py-1 bg-purple-900/50 backdrop-blur-sm text-purple-200 rounded-full text-xs font-medium">
+                        Digital Art
+                    </span>
+                    <span class="px-2 py-1 bg-purple-900/50 backdrop-blur-sm text-purple-200 rounded-full text-xs font-medium">
+                        Mixed Media
+                    </span>
+                    <span class="px-2 py-1 bg-purple-900/50 backdrop-blur-sm text-purple-200 rounded-full text-xs font-medium">
+                        Creative Writing
+                    </span>
+                    </div>
+                </div>
+                </div>
+            </div>
+
+            <div class="text-center">
+                <a href="#" class="inline-flex items-center px-8 py-4 bg-gradient-to-r from-purple-600 to-violet-600 text-white rounded-lg font-semibold hover:from-purple-700 hover:to-violet-700 transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/50">
+                <i data-lucide="heart" class="mr-2"></i>
+                View Creative Portfolio
+                </a>
+            </div>
+            </div>
+        </div>
+        </section>
+
+
+      <!-- Contact Section -->
+      <section id="contact" class="py-20 bg-gray-900 relative overflow-hidden">
+        <!-- Floating background elements -->
+        <div class="absolute inset-0 overflow-hidden">
+          <div class="absolute top-1/4 left-1/4 w-80 h-80 bg-purple-500/5 rounded-full blur-3xl animate-pulse"></div>
+          <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-violet-500/5 rounded-full blur-3xl animate-pulse delay-700"></div>
+        </div>
+
+        <div class="container mx-auto px-6 relative z-10">
+          <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16">
+              <h2 class="text-4xl md:text-5xl font-bold text-white mb-6 transform hover:scale-105 transition-all duration-300">
+                Get In Touch
+              </h2>
+              <p class="text-xl text-gray-400 max-w-3xl mx-auto">
+                I'm always interested in new opportunities and interesting projects. 
+                Let's discuss how we can work together!
+              </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-12">
+              <!-- Contact Information -->
+              <div class="space-y-8 transform hover:scale-105 transition-all duration-500">
+                <div>
+                  <h3 class="text-2xl font-bold text-white mb-6">
+                    Let's Connect
+                  </h3>
+                  <p class="text-gray-300 mb-8 leading-relaxed">
+                    Whether you have a project in mind, want to collaborate, or just want to say hello, 
+                    I'd love to hear from you. Feel free to reach out through any of the channels below.
+                  </p>
+                </div>
+
+                <div class="space-y-6">
+                  <div class="flex items-center transform hover:scale-105 transition-all duration-300">
+                    <div class="p-3 bg-gradient-to-r from-purple-600 to-violet-600 rounded-lg shadow-lg">
+                      <i data-lucide="mail" class="text-white"></i>
+                    </div>
+                    <div class="ml-4">
+                      <h4 class="text-lg font-semibold text-white">
+                        Email
+                      </h4>
+                      <a href="mailto:Mariam.elbishbeashy@gmail.com" class="text-gray-400 hover:text-purple-400 transition-colors duration-300">
+                        Mariam.elbishbeashy@gmail.com
+                      </a>
+                    </div>
+                  </div>
+
+                  <div class="flex items-center transform hover:scale-105 transition-all duration-300">
+                    <div class="p-3 bg-gradient-to-r from-violet-600 to-purple-600 rounded-lg shadow-lg">
+                      <i data-lucide="phone" class="text-white"></i>
+                    </div>
+                    <div class="ml-4">
+                      <h4 class="text-lg font-semibold text-white">
+                        Phone
+                      </h4>
+                      <a href="tel:+1234567890" class="text-gray-400 hover:text-violet-400 transition-colors duration-300">
+                        +1 (234) 567-8900
+                      </a>
+                    </div>
+                  </div>
+
+                  <div class="flex items-center transform hover:scale-105 transition-all duration-300">
+                    <div class="p-3 bg-gradient-to-r from-indigo-600 to-purple-600 rounded-lg shadow-lg">
+                      <i data-lucide="map-pin" class="text-white"></i>
+                    </div>
+                    <div class="ml-4">
+                      <h4 class="text-lg font-semibold text-white">
+                        Location
+                      </h4>
+                      <p class="text-gray-400">
+                        San Francisco, CA
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="pt-8">
+                  <h4 class="text-lg font-semibold text-white mb-4">
+                    Follow Me
+                  </h4>
+                  <div class="flex space-x-4">
+                    <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="p-3 bg-gray-800/50 backdrop-blur-sm text-white rounded-lg hover:bg-gray-700/50 transition-all duration-300 transform hover:scale-110 hover:-translate-y-1 hover:shadow-lg hover:shadow-purple-500/30">
+                      <i data-lucide="github"></i>
+                    </a>
+                    <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="p-3 bg-gray-800/50 backdrop-blur-sm text-white rounded-lg hover:bg-gray-700/50 transition-all duration-300 transform hover:scale-110 hover:-translate-y-1 hover:shadow-lg hover:shadow-purple-500/30">
+                      <i data-lucide="linkedin"></i>
+                    </a>
+                    <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="p-3 bg-gray-800/50 backdrop-blur-sm text-white rounded-lg hover:bg-gray-700/50 transition-all duration-300 transform hover:scale-110 hover:-translate-y-1 hover:shadow-lg hover:shadow-purple-500/30">
+                      <i data-lucide="twitter"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Contact Form -->
+              <div class="bg-gray-800/50 backdrop-blur-sm rounded-xl p-8 shadow-2xl transform hover:scale-105 hover:-translate-y-1 transition-all duration-500 hover:shadow-purple-500/20">
+                <h3 class="text-2xl font-bold text-white mb-6">
+                  Send a Message
+                </h3>
+                <form id="contact-form" class="space-y-6">
+                  <div class="grid md:grid-cols-2 gap-6">
+                    <div class="transform hover:scale-105 transition-all duration-300">
+                      <label for="name" class="block text-sm font-medium text-gray-300 mb-2">
+                        Name
+                      </label>
+                      <input type="text" id="name" name="name" required class="w-full px-4 py-3 bg-gray-700/50 backdrop-blur-sm border border-gray-600 rounded-lg focus:ring-2 focus:ring-purple-600 focus:border-transparent transition-all duration-300 text-white placeholder-gray-400" placeholder="Your name">
+                    </div>
+                    <div class="transform hover:scale-105 transition-all duration-300">
+                      <label for="email" class="block text-sm font-medium text-gray-300 mb-2">
+                        Email
+                      </label>
+                      <input type="email" id="email" name="email" required class="w-full px-4 py-3 bg-gray-700/50 backdrop-blur-sm border border-gray-600 rounded-lg focus:ring-2 focus:ring-purple-600 focus:border-transparent transition-all duration-300 text-white placeholder-gray-400" placeholder="your@email.com">
+                    </div>
+                  </div>
+                  <div class="transform hover:scale-105 transition-all duration-300">
+                    <label for="subject" class="block text-sm font-medium text-gray-300 mb-2">
+                      Subject
+                    </label>
+                    <input type="text" id="subject" name="subject" required class="w-full px-4 py-3 bg-gray-700/50 backdrop-blur-sm border border-gray-600 rounded-lg focus:ring-2 focus:ring-purple-600 focus:border-transparent transition-all duration-300 text-white placeholder-gray-400" placeholder="What's this about?">
+                  </div>
+                  <div class="transform hover:scale-105 transition-all duration-300">
+                    <label for="message" class="block text-sm font-medium text-gray-300 mb-2">
+                      Message
+                    </label>
+                    <textarea id="message" name="message" required rows="5" class="w-full px-4 py-3 bg-gray-700/50 backdrop-blur-sm border border-gray-600 rounded-lg focus:ring-2 focus:ring-purple-600 focus:border-transparent transition-all duration-300 resize-none text-white placeholder-gray-400" placeholder="Tell me about your project or just say hello!"></textarea>
+                  </div>
+                  <button type="submit" class="w-full flex items-center justify-center px-6 py-3 bg-gradient-to-r from-purple-600 to-violet-600 text-white rounded-lg font-semibold hover:from-purple-700 hover:to-violet-700 transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/50">
+                    <i data-lucide="send" class="mr-2"></i>
+                    Send Message
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12 relative overflow-hidden">
+      <!-- Floating background elements -->
+      <div class="absolute inset-0 overflow-hidden">
+        <div class="absolute top-1/2 left-1/4 w-64 h-64 bg-purple-500/5 rounded-full blur-3xl animate-pulse"></div>
+        <div class="absolute bottom-1/4 right-1/4 w-80 h-80 bg-violet-500/5 rounded-full blur-3xl animate-pulse delay-500"></div>
+      </div>
+
+      <div class="container mx-auto px-6 relative z-10">
+        <div class="max-w-6xl mx-auto">
+          <div class="grid md:grid-cols-4 gap-8">
+            <!-- Brand -->
+            <div class="md:col-span-2 transform hover:scale-105 transition-all duration-500">
+              <h3 class="text-2xl font-bold mb-4 text-purple-400">
+                Mariam Elbishbeashy
+              </h3>
+              <p class="text-gray-400 mb-6 leading-relaxed">
+                Full Stack Developer passionate about creating exceptional digital experiences. 
+                Always learning, always building, always improving.
+              </p>
+              <div class="flex space-x-4">
+                <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="p-2 bg-gray-800/50 backdrop-blur-sm rounded-lg hover:bg-gray-700/50 transition-all duration-300 transform hover:scale-110 hover:-translate-y-1 hover:shadow-lg hover:shadow-purple-500/30">
+                  <i data-lucide="github"></i>
+                </a>
+                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="p-2 bg-gray-800/50 backdrop-blur-sm rounded-lg hover:bg-gray-700/50 transition-all duration-300 transform hover:scale-110 hover:-translate-y-1 hover:shadow-lg hover:shadow-purple-500/30">
+                  <i data-lucide="linkedin"></i>
+                </a>
+                <a href="mailto:Mariam.elbishbeashy@gmail.com" class="p-2 bg-gray-800/50 backdrop-blur-sm rounded-lg hover:bg-gray-700/50 transition-all duration-300 transform hover:scale-110 hover:-translate-y-1 hover:shadow-lg hover:shadow-purple-500/30">
+                  <i data-lucide="mail"></i>
+                </a>
+              </div>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="transform hover:scale-105 transition-all duration-500">
+              <h4 class="text-lg font-semibold mb-4 text-purple-400">Quick Links</h4>
+              <ul class="space-y-2">
+                <li><button class="text-gray-400 hover:text-purple-400 transition-all duration-300 transform hover:scale-105" data-section="home">Home</button></li>
+                <li><button class="text-gray-400 hover:text-purple-400 transition-all duration-300 transform hover:scale-105" data-section="about">About</button></li>
+                <li><button class="text-gray-400 hover:text-purple-400 transition-all duration-300 transform hover:scale-105" data-section="skills">Skills</button></li>
+                <li><button class="text-gray-400 hover:text-purple-400 transition-all duration-300 transform hover:scale-105" data-section="projects">Projects</button></li>
+                <li><button class="text-gray-400 hover:text-purple-400 transition-all duration-300 transform hover:scale-105" data-section="experience">Experience</button></li>
+                <li><button class="text-gray-400 hover:text-purple-400 transition-all duration-300 transform hover:scale-105" data-section="contact">Contact</button></li>
+              </ul>
+            </div>
+
+            <!-- Services -->
+            <div class="transform hover:scale-105 transition-all duration-500">
+              <h4 class="text-lg font-semibold mb-4 text-purple-400">Services</h4>
+              <ul class="space-y-2 text-gray-400">
+                <li class="hover:text-purple-400 transition-colors duration-300 cursor-pointer">Web Development</li>
+                <li class="hover:text-purple-400 transition-colors duration-300 cursor-pointer">UI/UX Design</li>
+                <li class="hover:text-purple-400 transition-colors duration-300 cursor-pointer">Frontend Development</li>
+                <li class="hover:text-purple-400 transition-colors duration-300 cursor-pointer">Backend Development</li>
+                <li class="hover:text-purple-400 transition-colors duration-300 cursor-pointer">Consulting</li>
+                <li class="hover:text-purple-400 transition-colors duration-300 cursor-pointer">Code Review</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="border-t border-gray-800 mt-12 pt-8">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+              <p class="text-gray-400 text-sm mb-4 md:mb-0 transform hover:scale-105 transition-all duration-300">
+                © <span id="current-year"></span> Mariam Elbishbeashy. All rights reserved.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
