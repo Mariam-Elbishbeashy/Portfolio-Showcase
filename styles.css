@@ -134,4 +134,109 @@ body {
   stroke: currentColor;
 }
 
+body.light-mode {
+  background-color: #f3f4f6;
+  color: #111827;
+}
 
+body.light-mode .bg-gray-900 {
+  background-color: #f9fafb;
+}
+
+body.light-mode .text-white {
+  color: #111827;
+}
+
+body.light-mode .text-gray-300,
+body.light-mode .text-gray-400 {
+  color: #4b5563;
+}
+
+body.light-mode .bg-gray-800 {
+  background-color: #e5e7eb;
+}
+
+body.light-mode .bg-gray-800\/50 {
+  background-color: rgba(229, 231, 235, 0.8);
+}
+
+body.light-mode .border-gray-600 {
+  border-color: #d1d5db;
+}
+
+body.light-mode input,
+body.light-mode textarea {
+  background-color: rgba(255, 255, 255, 0.8);
+  color: #111827;
+  border-color: #d1d5db;
+}
+
+body.light-mode input::placeholder,
+body.light-mode textarea::placeholder {
+  color: #6b7280;
+}
+
+/* Hero section light mode fixes */
+body.light-mode #home {
+  background: linear-gradient(to bottom right, #e5e7eb, #d8b4fe);
+}
+
+body.light-mode #home .absolute.inset-0 {
+  display: none;
+}
+
+/* Certifications section light mode fixes */
+body.light-mode #certifications .bg-gray-900\/50 {
+  background-color: rgba(255, 255, 255, 0.8) !important;
+}
+
+body.light-mode #certifications .bg-gray-800 {
+  background-color: #e5e7eb;
+}
+
+/* Hobbies section light mode fixes */
+body.light-mode #hobbies .bg-gray-800\/50 {
+  background-color: rgba(229, 231, 235, 0.8);
+}
+
+/* Projects section light mode fixes */
+body.light-mode #projects .bg-gray-800\/50 {
+  background-color: rgba(229, 231, 235, 0.8);
+}
+
+/* Skills section light mode fixes */
+body.light-mode #skills .bg-gray-800\/50 {
+  background-color: rgba(229, 231, 235, 0.8);
+}
+
+/* About section light mode fixes */
+body.light-mode #about .bg-gray-800\/50 {
+  background-color: rgba(229, 231, 235, 0.8);
+}
+
+/* Contact section light mode fixes */
+body.light-mode #contact .bg-gray-800\/50 {
+  background-color: rgba(229, 231, 235, 0.8);
+}
+
+body.light-mode #contact .bg-gray-700\/50 {
+  background-color: rgba(209, 213, 219, 0.5);
+}
+
+/* Footer light mode fixes */
+body.light-mode footer.bg-gray-900 {
+  background-color: #f3f4f6 !important;
+}
+
+body.light-mode footer .text-gray-400 {
+  color: #4b5563;
+}
+
+body.light-mode footer .border-gray-800 {
+  border-color: #d1d5db;
+}
+
+/* Smooth transitions */
+body, body * {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}

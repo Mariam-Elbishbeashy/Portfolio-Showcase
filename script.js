@@ -131,3 +131,111 @@ document.addEventListener('DOMContentLoaded', function() {
 document.getElementById('scroll-to-about').addEventListener('click', () => {
     document.querySelector('#about')?.scrollIntoView({ behavior: 'smooth' });
   });
+
+  // Wait for DOM to be fully loaded
+  document.addEventListener('DOMContentLoaded', function() {
+    // Initialize Lucide icons
+    lucide.createIcons();
+    
+    // Theme toggle functionality
+    const themeToggleBtns = document.querySelectorAll('#theme-toggle, #theme-toggle-mobile');
+    const currentTheme = localStorage.getItem('theme') || 'dark';
+    
+    // Set initial theme
+    if (currentTheme === 'light') {
+      document.body.classList.add('light-mode');
+      updateIcons('light');
+    } else {
+      updateIcons('dark');
+    }
+    
+    // Add event listeners to both toggle buttons
+    themeToggleBtns.forEach(btn => {
+      btn.addEventListener('click', function() {
+        // Toggle light mode class on body
+        document.body.classList.toggle('light-mode');
+        
+        // Update icons based on current theme
+        if (document.body.classList.contains('light-mode')) {
+          localStorage.setItem('theme', 'light');
+          updateIcons('light');
+        } else {
+          localStorage.setItem('theme', 'dark');
+          updateIcons('dark');
+        }
+      });
+    });
+    
+    // Function to update the icons based on theme
+    function updateIcons(theme) {
+      const iconElements = document.querySelectorAll('#theme-toggle i, #theme-toggle-mobile i');
+      iconElements.forEach(icon => {
+        if (theme === 'light') {
+          icon.setAttribute('data-lucide', 'moon');
+        } else {
+          icon.setAttribute('data-lucide', 'sun');
+        }
+      });
+      // Refresh icons
+      lucide.createIcons();
+    }
+    
+    // Set current year in footer
+    document.getElementById('current-year').textContent = new Date().getFullYear();
+    
+    // Mobile menu functionality
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    
+    if (mobileMenuButton && mobileMenu) {
+      mobileMenuButton.addEventListener('click', function() {
+        mobileMenu.classList.toggle('hidden');
+        const icon = mobileMenuButton.querySelector('i');
+        if (mobileMenu.classList.contains('hidden')) {
+          icon.setAttribute('data-lucide', 'menu');
+        } else {
+          icon.setAttribute('data-lucide', 'x');
+        }
+        lucide.createIcons();
+      });
+    }
+    
+    // Smooth scrolling for navigation
+    document.querySelectorAll('button[data-section]').forEach(button => {
+      button.addEventListener('click', function() {
+        const sectionId = this.getAttribute('data-section');
+        const section = document.getElementById(sectionId);
+        if (section) {
+          section.scrollIntoView({ behavior: 'smooth' });
+          
+          // Close mobile menu if open
+          if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
+            mobileMenu.classList.add('hidden');
+            const menuIcon = mobileMenuButton.querySelector('i');
+            menuIcon.setAttribute('data-lucide', 'menu');
+            lucide.createIcons();
+          }
+        }
+      });
+    });
+    
+    // Scroll to about section
+    const scrollToAboutBtn = document.getElementById('scroll-to-about');
+    if (scrollToAboutBtn) {
+      scrollToAboutBtn.addEventListener('click', function() {
+        document.getElementById('about').scrollIntoView({ behavior: 'smooth' });
+      });
+    }
+    
+    // Header background on scroll
+    const header = document.getElementById('header');
+    if (header) {
+      window.addEventListener('scroll', function() {
+        if (window.scrollY > 50) {
+          header.classList.add('bg-gray-900', 'shadow-lg');
+        } else {
+          header.classList.remove('bg-gray-900', 'shadow-lg');
+        }
+      });
+    }
+  });
